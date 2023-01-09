@@ -1,7 +1,7 @@
-package edu.cbd.weaponservice.core.domain.service.interfaces;
+package edu.cbd.ProductService.core.domain.service.interfaces;
 
 
-import edu.cbd.weaponservice.core.domain.model.Product;
+import edu.cbd.ProductService.core.domain.model.Product;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

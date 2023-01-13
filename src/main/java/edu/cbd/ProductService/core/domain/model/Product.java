@@ -1,6 +1,7 @@
 package edu.cbd.ProductService.core.domain.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import lombok.experimental.Accessors;
 import org.hibernate.annotations.UuidGenerator;
@@ -39,72 +40,7 @@ public class Product {
 
     private String imageLink;
 
-    @Column
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable
-    private List<ProductAttachment> attachments;
+    @ElementCollection
+    private List<String> tags;
 
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPrice() {
-        return price;
-    }
-
-    public void setPrice(String price) {
-        this.price = price;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getDetails() {
-        return details;
-    }
-
-    public void setDetails(String details) {
-        this.details = details;
-    }
-
-    public int getCount() {
-        return count;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
-    }
-
-    public String getImageLink() {
-        return imageLink;
-    }
-
-    public void setImageLink(String imageLink) {
-        this.imageLink = imageLink;
-    }
-
-    public List<ProductAttachment> getAttachments() {
-        return attachments;
-    }
-
-    public void setAttachments(List<ProductAttachment> attachments) {
-        this.attachments = attachments;
-    }
 }
